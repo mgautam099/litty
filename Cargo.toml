@@ -1,0 +1,26 @@
+[package]
+name = "litty"
+version = "0.1.0"
+edition = "2024"
+description = "A tiny macOS window for running long-lived commands (not a terminal emulator)"
+license = "MIT"
+repository = "https://github.com/mgautam099/litty"
+
+[dependencies]
+eframe = { version = "0.37.0", default-features = false, features = ["glow", "default_fonts", "clipboard"] }
+libc = "0.2.191"
+
+# Same winit eframe already uses; needed to turn off macOS's built-in menu (see main.rs).
+[target.'cfg(target_os = "macos")'.dependencies]
+winit = { version = "0.30.13", default-features = false }
+
+# Only used so the code can be compile-checked on Linux; ignored on macOS.
+[target.'cfg(target_os = "linux")'.dependencies]
+eframe = { version = "0.37.0", default-features = false, features = ["glow", "default_fonts", "clipboard", "x11"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
