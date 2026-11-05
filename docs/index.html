@@ -72,7 +72,9 @@
   <p>litty is not a terminal emulator. It has no colors and no cursor control, and interactive programs like vim or htop won't work.</p>
 
   <h2>Install</h2>
-  <p>You need macOS and Rust 1.85 or newer. Developed and tested on Apple Silicon; Intel Macs are untested.</p>
+  <p><a href="https://github.com/mgautam099/litty/releases/latest">Download the latest release</a> for Apple Silicon Macs, unzip it and move <code>litty.app</code> to Applications.</p>
+  <p class="muted">litty is not notarized by Apple, so macOS will refuse to open it at first. Go to System Settings &gt; Privacy &amp; Security and click Open Anyway.</p>
+  <p>Or build from source. You need macOS and Rust 1.85 or newer. Developed and tested on Apple Silicon; Intel Macs are untested.</p>
 <pre><code>git clone https://github.com/mgautam099/litty.git
 cd litty
 ./make-app.sh</code></pre>

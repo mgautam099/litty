@@ -23,10 +23,27 @@ The macOS menu bar is turned off (it would make Cmd+Q quit without asking), so C
 ## Requirements
 
 - macOS only. Developed and tested on an Apple Silicon Mac (M4); Intel Macs are untested.
-- Rust 1.85 or newer (the crate uses the 2024 edition). Developed with 1.96.
 - zsh (`/bin/zsh`, which macOS ships).
+- To build from source: Rust 1.85 or newer (the crate uses the 2024 edition). Developed with 1.96.
 
-## Install on your Mac (one time)
+## Download
+
+For Apple Silicon Macs, macOS 11 or newer.
+
+1. Download the zip from the [latest release](https://github.com/mgautam099/litty/releases/latest) and unzip it.
+2. Move `litty.app` to Applications.
+3. Open it. macOS will refuse, because litty is not notarized by Apple.
+4. Go to System Settings > Privacy & Security, scroll down and click Open Anyway.
+
+Or skip steps 3 and 4 by running this once in a terminal:
+
+```sh
+xattr -dr com.apple.quarantine ~/Applications/litty.app
+```
+
+Use `/Applications/litty.app` if that's where you put it.
+
+## Build from source
 
 1. Install Rust (official installer, takes a minute or two):
 
